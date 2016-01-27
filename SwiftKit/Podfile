@@ -5,20 +5,6 @@ use_frameworks!
 
 target 'SwiftKit' do
 
-# Smooth asynchronous user interfaces for iOS apps. : Thanks to Scott Goodson and Facebook team.
-pod 'AsyncDisplayKit'
-
-# An embedded syncable NoSQL database for iOS apps.
-pod 'couchbase-lite-ios'
-
-# Elegant HTTP Networking in Swift
-pod 'Alamofire'
-
-#AlamofireImage is an image component library for Alamofire.
-pod 'AlamofireImage'
-
-# An extension to Alamofire which automatically converts JSON response data into swift objects using ObjectMapper.
-pod 'AlamofireObjectMapper'
 
 end
 
