@@ -1,6 +1,6 @@
-// SwiftKit iOS Playground
+// SHSwiftKit iOS Playground
 
 import UIKit
-import SwiftKit
+import SHSwiftKit
 
 var str = "Hello, playground"

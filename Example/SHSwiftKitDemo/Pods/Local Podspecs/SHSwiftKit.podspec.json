@@ -1,0 +1,26 @@
+{
+  "name": "SHSwiftKit",
+  "summary": "A short description of SHSwiftKit.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ankitthakur/SHSwiftKit",
+  "license": "MIT",
+  "authors": {
+    "Ankit Thakur": "ankitthakur85@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/ankitthakur/SHSwiftKit.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/ankitthakur",
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.9"
+  },
+  "requires_arc": true,
+  "ios": {
+    "source_files": "Sources/{iOS,Shared}/**/*"
+  },
+  "osx": {
+    "source_files": "Sources/{Mac,Shared}/**/*"
+  }
+}

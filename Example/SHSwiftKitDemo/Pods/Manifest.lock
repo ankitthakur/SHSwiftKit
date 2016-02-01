@@ -1,0 +1,14 @@
+PODS:
+  - SHSwiftKit (0.1.0)
+
+DEPENDENCIES:
+  - SHSwiftKit (from `../../`)
+
+EXTERNAL SOURCES:
+  SHSwiftKit:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  SHSwiftKit: 9e57d7fc77b4ee4e552e410630ee7d6c25e00e8b
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module SHSwiftKit {
+  umbrella header "SHSwiftKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
