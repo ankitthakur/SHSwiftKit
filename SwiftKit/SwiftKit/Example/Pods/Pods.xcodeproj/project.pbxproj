@@ -11,7 +11,6 @@
 		2099BD70B4755715DBCB25C4EB97C705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		30F3D3B1DF6EE9AA51A0386D45B1F941 /* SwiftKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F60AA237B74529E4CFA350A7AC852E55 /* SwiftKit-dummy.m */; };
 		71FF5F844CDE805265FEC7B34D87D51F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		772DE09E8DA854DAE634542983957DEB /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66BBF1DD250D5B184DD877CE8DB437D /* ReplaceMe.swift */; };
 		9B6307CB65AE72F3FB0D0820891DBE5A /* Pods-SwiftKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1E440BBA3215AC5A3C3B72FF09CC558 /* Pods-SwiftKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E32622A776531F69B18B7F2B7FDB4E0 /* SwiftKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DAD8F46C15A75F506EFA0929A75FA58 /* SwiftKit.bundle */; };
 		A27DC4211C5A1DEB00353994 /* SKHTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC4011C5A1B6A00353994 /* SKHTTPManager.swift */; };
@@ -79,7 +78,6 @@
 		F4D866C2CDB1A7CEC483E7B2B6172A2C /* Pods-SwiftKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftKit_Tests-resources.sh"; sourceTree = "<group>"; };
 		F60AA237B74529E4CFA350A7AC852E55 /* SwiftKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKit-dummy.m"; sourceTree = "<group>"; };
 		F663FD94307CDF992902AA0132A4AA1A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F66BBF1DD250D5B184DD877CE8DB437D /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		FBA9D42E0D20D4DB131228AB33889D23 /* Pods-SwiftKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FC9374980DB6BC83C152CB48F9852752 /* Pods-SwiftKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftKit_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,7 +214,6 @@
 		C96C5D6DE087322081C91D51CDDFB914 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F66BBF1DD250D5B184DD877CE8DB437D /* ReplaceMe.swift */,
 				A27DC4011C5A1B6A00353994 /* SKHTTPManager.swift */,
 				A28155DC1C5B713A00A4250D /* SKAsyncManager.swift */,
 			);
@@ -421,7 +418,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772DE09E8DA854DAE634542983957DEB /* ReplaceMe.swift in Sources */,
 				30F3D3B1DF6EE9AA51A0386D45B1F941 /* SwiftKit-dummy.m in Sources */,
 				A28155DD1C5B713A00A4250D /* SKAsyncManager.swift in Sources */,
 				A27DC4211C5A1DEB00353994 /* SKHTTPManager.swift in Sources */,
