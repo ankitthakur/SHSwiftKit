@@ -5,6 +5,8 @@
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
+
+
 Pod::Spec.new do |spec|
 
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -58,10 +60,11 @@ Pod::Spec.new do |spec|
     # spec.watchos.deployment_target = "2.0"
     # spec.tvos.deployment_target = "9.0"
 
-    spec.source_files = 'SwiftKit/**/*.swift'
+    spec.source_files = "SwiftKit/**/*.{swift}"
+    #spec.source_files = 'SwiftKit/**/*.swift'
     #spec.source_files = 'Pod/Classes/**/*'
     spec.resource_bundles = {
-    'SwiftKit' => ['Pod/Assets/*.png']
+    'SwiftKit' => ['Pod/Assets/*.png', 'Pod/**/*.{png,jpeg,jpg,storyboard,xib}']
     }
 
     # spec.public_header_files = 'Pod/Classes/**/*.swift'
