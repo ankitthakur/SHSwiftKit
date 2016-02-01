@@ -60,7 +60,7 @@ Pod::Spec.new do |spec|
     # spec.watchos.deployment_target = "2.0"
     # spec.tvos.deployment_target = "9.0"
 
-    spec.source_files = "SwiftKit/**/*.{swift}"
+    spec.source_files = 'Pod/Classes/**/*'
     #spec.source_files = 'SwiftKit/**/*.swift'
     #spec.source_files = 'Pod/Classes/**/*'
     spec.resource_bundles = {
