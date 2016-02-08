@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A21317391C5F8D1F006A38D0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A21317381C5F8D1F006A38D0 /* README.md */; };
+		A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213173F1C60A076006A38D0 /* SHNetworkManager.swift */; };
+		A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317421C60A15C006A38D0 /* SHAsyncManager.swift */; };
+		A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* SHSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* SHSwiftKit.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* SHSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* SHSwiftKit.framework */; };
 		D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629751C3A878E007F7B7C /* Quick.framework */; };
@@ -43,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		A21317381C5F8D1F006A38D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A213173F1C60A076006A38D0 /* SHNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNetworkManager.swift; sourceTree = "<group>"; };
+		A21317421C60A15C006A38D0 /* SHAsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAsyncManager.swift; sourceTree = "<group>"; };
+		A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageLoader.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* SHSwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHSwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C629821C3A892A007F7B7C /* iOS.swift */,
+				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -170,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				D5C629861C3A89A8007F7B7C /* Shared.swift */,
+				A21317421C60A15C006A38D0 /* SHAsyncManager.swift */,
+				A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -420,6 +429,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21317391C5F8D1F006A38D0 /* README.md in Sources */,
+				A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */,
+				A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */,
+				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* Shared.swift in Sources */,
 			);
