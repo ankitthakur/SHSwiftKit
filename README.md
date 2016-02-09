@@ -10,7 +10,7 @@
 
 **SHSwiftKit** description.
 
-## Usage
+## Docs
 
 ```swift
 [![local closure](http://ankitthakur.github.io/blog/swift/scope/2016/02/08/localScope.html)]
@@ -34,6 +34,9 @@ public func radiansToDegrees(radians: CGFloat) -> CGFloat
 
 
 ```
+
+[Image Helpers](https://github.com/ankitthakur/SHSwiftKit/blob/master/ImageHelper.md)
+[Color Helpers](https://github.com/ankitthakur/SHSwiftKit/blob/master/ColorHelper.md)
 
 ## Author
 
