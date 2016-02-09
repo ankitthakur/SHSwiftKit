@@ -3,7 +3,7 @@
 //  SHSwiftKit
 //
 //  Created by ankitthakur on 02/02/16.
-//  Copyright © 2016 Hyper Interaktiv AS. All rights reserved.
+//  Copyright © 2016 Ankit Thakur. All rights reserved.
 //
 
 import Foundation
@@ -70,7 +70,7 @@ class SHNetworkManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate
     var uploadTasks:[NSURLSessionUploadTask] = [];
     
     var mainQueue:NSOperationQueue = NSOperationQueue.mainQueue();
-    var backgroundQueue:dispatch_queue_t = SHAsyncManager.sharedInstance.GlobalUtilityQueue;
+    var backgroundQueue:dispatch_queue_t = GlobalUtilityQueue;
     
     private override init(){
         

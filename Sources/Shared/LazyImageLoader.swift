@@ -2,8 +2,8 @@
 //  LazyImageLoader.swift
 //  SHSwiftKit
 //
-//  Created by DMI on 03/02/16.
-//  Copyright © 2016 Hyper Interaktiv AS. All rights reserved.
+//  Created by ankitthakur on 03/02/16.
+//  Copyright © 2016 Ankit Thakur. All rights reserved.
 //
 
 import Foundation

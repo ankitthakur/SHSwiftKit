@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0119587E1D7E0F65078800268D0C8A9C /* SHSwiftKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A410C1B05CA3E9754637AB129217CD /* SHSwiftKit-dummy.m */; };
 		0DB5082BC80468321B1A0C23D169FFC8 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		19727F991887A9913712943FEBA23CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		4CF853F7BC2371658E2B03AFC80A3F7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		3CAB08F7B7260DFFEB73BE52837980FE /* iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC11D67EA2567D2910FCBBD26F8C20 /* iOS.swift */; };
+		4CF853F7BC2371658E2B03AFC80A3F7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		54B2779C8CF8D6D887ADE580D9ECA63F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
 		73AFCC7C2C97D69EE14B628E47F552C7 /* SHSwiftKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C34E3576318CD0050873B60059C834 /* SHSwiftKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74205DCD1F34D9866B7251E536480A27 /* iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45131FC591D0CF7B335245206098F133 /* iOS.swift */; };
 		75FFC2758D775D6B8B7D108852F896D9 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C8C4AEBFAE27327C1A8046FF713BAA6 /* SHSwiftKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A410C1B05CA3E9754637AB129217CD /* SHSwiftKit-dummy.m */; };
-		F6CB59C093F035A1AF86D3659143FE7C /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C844228EE101825C745604F7E87167 /* Shared.swift */; };
+		7CC534EE0728360A96352320463E6576 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		97591D869BBE3A3725CB7F7FEB5E9E57 /* LazyImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC86387281CAF280B5B86DB2F2B7DA /* LazyImageLoader.swift */; };
+		A1FEE031AA6BE37083389CE0A8BBC812 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929D184BBCD823098DFDF4DF6F7BD7DE /* SHAsyncManager.swift */; };
+		AA7288D97B7C78015FC1DC1A228C8280 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0380432D3120C18491E2334CA1E6813 /* Shared.swift */; };
+		B1A3EE0C16D43D18600E6730EEE209BB /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15478A957A18253DD026BEE3EC0265 /* SHNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,21 +35,25 @@
 		0E65598D284463B1D9CC0C8C2288CBD7 /* SHSwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHSwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA924E5DD4A59E20D34C716EB88FE57 /* SHSwiftKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SHSwiftKit.xcconfig; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		2F15478A957A18253DD026BEE3EC0265 /* SHNetworkManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SHNetworkManager.swift; sourceTree = "<group>"; };
 		31F4D512AE0D7B815EBC9F725A3D2FD6 /* SHSwiftKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHSwiftKit-prefix.pch"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		45131FC591D0CF7B335245206098F133 /* iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = iOS.swift; sourceTree = "<group>"; };
 		45A410C1B05CA3E9754637AB129217CD /* SHSwiftKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SHSwiftKit-dummy.m"; sourceTree = "<group>"; };
-		57C844228EE101825C745604F7E87167 /* Shared.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		58BC86387281CAF280B5B86DB2F2B7DA /* LazyImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LazyImageLoader.swift; sourceTree = "<group>"; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73C34E3576318CD0050873B60059C834 /* SHSwiftKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SHSwiftKit-umbrella.h"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		88BC11D67EA2567D2910FCBBD26F8C20 /* iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = iOS.swift; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		929D184BBCD823098DFDF4DF6F7BD7DE /* SHAsyncManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SHAsyncManager.swift; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		A3A3EBA4FB77B0A337151478452FCEE3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		E0380432D3120C18491E2334CA1E6813 /* Shared.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB9582F66704B6516C84E0D29E998FA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,14 +61,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		21BB93139C6ACFA71F19125A7A7F6DEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19727F991887A9913712943FEBA23CEC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E24503B2B0053870CDD6617FA8C8D49A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,16 +69,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC6F7538A422E1D88CDB0AAA08579A53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54B2779C8CF8D6D887ADE580D9ECA63F /* Foundation.framework in Frameworks */,
+				7CC534EE0728360A96352320463E6576 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00C8301BFCA0E7348C5BB406A747ADAE /* Sources */ = {
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B8DBA820804EC8F2B6F00C9EE7612E67 /* iOS */,
-				C77500BEBB3B6207B65E0B3DB3150561 /* Shared */,
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
 			);
-			path = Sources;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
@@ -104,7 +121,7 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				E78DD885E2B6E1CBE91051666DAF936D /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				AA64B7B61B161DF82F77D0896C23C7FA /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
@@ -141,34 +158,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B8DBA820804EC8F2B6F00C9EE7612E67 /* iOS */ = {
+		C1F792121205B50578D675C5A017C1CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				45131FC591D0CF7B335245206098F133 /* iOS.swift */,
+				F76688D469D72072B22BADA96B87E241 /* iOS */,
+				D59B2B354EEEF6A35C0FE757267BBB45 /* Shared */,
 			);
-			path = iOS;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		D59B2B354EEEF6A35C0FE757267BBB45 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C77500BEBB3B6207B65E0B3DB3150561 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				57C844228EE101825C745604F7E87167 /* Shared.swift */,
+				58BC86387281CAF280B5B86DB2F2B7DA /* LazyImageLoader.swift */,
+				E0380432D3120C18491E2334CA1E6813 /* Shared.swift */,
+				929D184BBCD823098DFDF4DF6F7BD7DE /* SHAsyncManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -176,7 +180,7 @@
 		D9202A993CAF3B018B58D94818E9C221 /* SHSwiftKit */ = {
 			isa = PBXGroup;
 			children = (
-				00C8301BFCA0E7348C5BB406A747ADAE /* Sources */,
+				C1F792121205B50578D675C5A017C1CA /* Sources */,
 				88F2C1D567C7926D31FDC40142ADEB76 /* Support Files */,
 			);
 			name = SHSwiftKit;
@@ -189,6 +193,15 @@
 				D9202A993CAF3B018B58D94818E9C221 /* SHSwiftKit */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F76688D469D72072B22BADA96B87E241 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				88BC11D67EA2567D2910FCBBD26F8C20 /* iOS.swift */,
+				2F15478A957A18253DD026BEE3EC0265 /* SHNetworkManager.swift */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +248,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D810028C64A6DEB76BC3F5F878D18219 /* Build configuration list for PBXNativeTarget "SHSwiftKit" */;
 			buildPhases = (
-				A8B8DB2B06811AA65587C79F3B7A03EA /* Sources */,
-				21BB93139C6ACFA71F19125A7A7F6DEC /* Frameworks */,
+				7149EA592BD6DBA3EBDA55565338F880 /* Sources */,
+				EC6F7538A422E1D88CDB0AAA08579A53 /* Frameworks */,
 				8704E100C6778B088E303BC2447423AB /* Headers */,
 			);
 			buildRules = (
@@ -284,13 +297,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8B8DB2B06811AA65587C79F3B7A03EA /* Sources */ = {
+		7149EA592BD6DBA3EBDA55565338F880 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74205DCD1F34D9866B7251E536480A27 /* iOS.swift in Sources */,
-				F6CB59C093F035A1AF86D3659143FE7C /* Shared.swift in Sources */,
-				8C8C4AEBFAE27327C1A8046FF713BAA6 /* SHSwiftKit-dummy.m in Sources */,
+				3CAB08F7B7260DFFEB73BE52837980FE /* iOS.swift in Sources */,
+				97591D869BBE3A3725CB7F7FEB5E9E57 /* LazyImageLoader.swift in Sources */,
+				AA7288D97B7C78015FC1DC1A228C8280 /* Shared.swift in Sources */,
+				A1FEE031AA6BE37083389CE0A8BBC812 /* SHAsyncManager.swift in Sources */,
+				B1A3EE0C16D43D18600E6730EEE209BB /* SHNetworkManager.swift in Sources */,
+				0119587E1D7E0F65078800268D0C8A9C /* SHSwiftKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

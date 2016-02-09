@@ -1,7 +1,7 @@
 {
   "name": "SHSwiftKit",
-  "summary": "A short description of SHSwiftKit.",
-  "version": "0.1.0",
+  "summary": "Pure Swift Kit with wrappers on Foundation and other iOS Core frameworks.",
+  "version": "0.0.0.1",
   "homepage": "https://github.com/ankitthakur/SHSwiftKit",
   "license": "MIT",
   "authors": {
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/ankitthakur/SHSwiftKit.git",
-    "tag": "0.1.0"
+    "tag": "0.0.0.1"
   },
   "social_media_url": "https://twitter.com/ankitthakur",
   "platforms": {
@@ -18,7 +18,11 @@
   },
   "requires_arc": true,
   "ios": {
-    "source_files": "Sources/{iOS,Shared}/**/*"
+    "source_files": "Sources/{iOS,Shared}/**/*",
+    "frameworks": [
+      "UIKit",
+      "Foundation"
+    ]
   },
   "osx": {
     "source_files": "Sources/{Mac,Shared}/**/*"
