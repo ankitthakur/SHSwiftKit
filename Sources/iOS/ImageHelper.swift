@@ -13,7 +13,6 @@ import CoreGraphics
 
 public extension UIImage{
     
-    // create image from view
     /**
     Create image from a view.
     
