@@ -13,7 +13,7 @@
 ## Docs
 
 ```swift
-[![local closure](http://ankitthakur.github.io/blog/swift/scope/2016/02/08/localScope.html)]
+[local closure](http://ankitthakur.github.io/blog/swift/scope/2016/02/08/localScope.html)
 // global closures
 public func local(closure: () -> ())
 public func localAutoreleasePool(closure: () -> ())
