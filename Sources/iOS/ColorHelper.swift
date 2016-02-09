@@ -14,6 +14,13 @@ import CoreGraphics
 
 public extension UIColor{
     
+    /**
+     Create UIColor from HEX string
+     
+     - parameter hexString: hex color code
+     
+     - returns: UIColor object
+     */
     func colorFromHexString(hexString:String!)->UIColor?
     {
         var rgbValue:UInt64 = 0;
@@ -29,6 +36,11 @@ public extension UIColor{
         return UIColor(red: r, green: g, blue: b, alpha: 1)
     }
     
+    /**
+     Convert UIColor object to Hex Color code
+     
+     - returns: hex color code in string.
+     */
     func hexString() -> String {
         let rgbaT = self.colorComponents()
         let r: Int = Int(rgbaT.red * 255)
@@ -40,7 +52,11 @@ public extension UIColor{
         return "#\(red)\(green)\(blue)"
     }
     
-
+    /**
+     Get color components (RGBA) from UIColor
+     
+     - returns: color components as RGBA.
+     */
     func colorComponents() -> ColorComponents {
         
         var r: CGFloat = 0
