@@ -52,6 +52,8 @@
 		A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageLoader.swift; sourceTree = "<group>"; };
 		A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		A24A50811C69FF6100F9D8C2 /* ColorHelper.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ColorHelper.md; sourceTree = "<group>"; };
+		A24A50821C69FF6100F9D8C2 /* ImageHelper.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ImageHelper.md; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* SHSwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHSwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				A21317381C5F8D1F006A38D0 /* README.md */,
+				A24A50811C69FF6100F9D8C2 /* ColorHelper.md */,
+				A24A50821C69FF6100F9D8C2 /* ImageHelper.md */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 				D5C6295C1C3A800E007F7B7C /* SHSwiftKit */,
 				D5C6298F1C3A8BDA007F7B7C /* SHSwiftKitTests */,

@@ -13,7 +13,26 @@
 ## Usage
 
 ```swift
-<API>
+[![local closure](http://ankitthakur.github.io/blog/swift/scope/2016/02/08/localScope.html)]
+// global closures
+public func local(closure: () -> ())
+public func localAutoreleasePool(closure: () -> ())
+
+global variables
+public var GlobalMainQueue: dispatch_queue_t { get }
+public var GlobalUserInteractiveQueue: dispatch_queue_t { get }
+public var GlobalUserInitiatedQueue: dispatch_queue_t { get }
+public var GlobalUtilityQueue: dispatch_queue_t { get }
+public var GlobalBackgroundQueue: dispatch_queue_t { get }
+
+// public tuple for color components
+public typealias ColorComponents = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+
+// global functions
+public func degreesToRadians(degrees: CGFloat) -> CGFloat
+public func radiansToDegrees(radians: CGFloat) -> CGFloat
+
+
 ```
 
 ## Author
