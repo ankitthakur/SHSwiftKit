@@ -11,6 +11,7 @@
 		A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317421C60A15C006A38D0 /* SHAsyncManager.swift */; };
 		A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */; };
 		A24A50711C68C0DC00F9D8C2 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */; };
+		A24A507C1C69F07F00F9D8C2 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* SHSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* SHSwiftKit.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* SHSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* SHSwiftKit.framework */; };
 		D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629751C3A878E007F7B7C /* Quick.framework */; };
@@ -50,6 +51,7 @@
 		A21317421C60A15C006A38D0 /* SHAsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAsyncManager.swift; sourceTree = "<group>"; };
 		A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageLoader.swift; sourceTree = "<group>"; };
 		A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* SHSwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHSwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 				D5C629821C3A892A007F7B7C /* iOS.swift */,
 				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
 				A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */,
+				A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* Shared.swift in Sources */,
+				A24A507C1C69F07F00F9D8C2 /* ColorHelper.swift in Sources */,
 				A24A50711C68C0DC00F9D8C2 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
