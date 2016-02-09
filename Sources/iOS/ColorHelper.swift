@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import CoreGraphics
 
-typealias ColorComponents = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+
+
 public extension UIColor{
     
     func colorFromHexString(hexString:String!)->UIColor?
@@ -29,10 +30,10 @@ public extension UIColor{
     }
     
     func hexString() -> String {
-        let rgbaT = rgbaComponents()
-        let r: Int = Int(rgbaT.r * 255)
-        let g: Int = Int(rgbaT.g * 255)
-        let b: Int = Int(rgbaT.b * 255)
+        let rgbaT = self.colorComponents()
+        let r: Int = Int(rgbaT.red * 255)
+        let g: Int = Int(rgbaT.green * 255)
+        let b: Int = Int(rgbaT.blue * 255)
         let red = NSString(format: "%02x", r)
         let green = NSString(format: "%02x", g)
         let blue = NSString(format: "%02x", b)
@@ -40,20 +41,23 @@ public extension UIColor{
     }
     
 
-    func rgbaComponents() -> ColorComponents {
+    func colorComponents() -> ColorComponents {
+        
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
         var a: CGFloat = 0
         
-        if self.respondsToSelector("getRed:green:blue:alpha:") {
-            self.getRed(&r, green: &g, blue: &b, alpha: &a)
-        } else {
-            let components = CGColorGetComponents(self.CGColor)
-            r = components[0]
-            g = components[1]
-            b = components[2]
-            a = components[3]
+        local { () -> () in
+            if self.respondsToSelector("getRed:green:blue:alpha:") {
+                self.getRed(&r, green: &g, blue: &b, alpha: &a)
+            } else {
+                let components = CGColorGetComponents(self.CGColor)
+                r = components[0]
+                g = components[1]
+                b = components[2]
+                a = components[3]
+            }
         }
         
         return (r, g, b, a)

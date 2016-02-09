@@ -184,7 +184,7 @@ public extension UIImage{
             sourceImage.drawInRect(rect, blendMode: .Normal, alpha: 1);
             let context:CGContextRef  = UIGraphicsGetCurrentContext()!;
             
-            let components:ColorComponents = borderColor.rgbaComponents();
+            let components:ColorComponents = borderColor.colorComponents();
             CGContextSetRGBStrokeColor(context, components.red, components.green, components.blue, components.alpha);
             CGContextStrokeRect(context, rect);
             newImage =  UIGraphicsGetImageFromCurrentImageContext();

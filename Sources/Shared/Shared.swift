@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 // local: to specify the scope of code
 func local(closure: ()->()) {
@@ -32,3 +33,6 @@ var GlobalUtilityQueue: dispatch_queue_t {
 var GlobalBackgroundQueue: dispatch_queue_t {
     return dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0);
 }
+
+
+public typealias ColorComponents = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
