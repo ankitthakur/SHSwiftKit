@@ -5,7 +5,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/SHSwiftKit.svg?style=flat)](http://cocoadocs.org/docsets/SHSwiftKit)
 [![Platform](https://img.shields.io/cocoapods/p/SHSwiftKit.svg?style=flat)](http://cocoadocs.org/docsets/SHSwiftKit)
-
+[![Coverage Status](https://coveralls.io/repos/realm/SwiftCov/badge.svg)](https://codecov.io/github/ankitthakur/SHSwiftKit)
 ## Description
 
 **SHSwiftKit** description.
