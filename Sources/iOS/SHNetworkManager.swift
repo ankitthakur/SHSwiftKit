@@ -211,26 +211,6 @@ class SHNetworkManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate
     }
     
     
-    // MARK:- NSURLSessionStreamDelegate
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, readClosedForStreamTask streamTask: NSURLSessionStreamTask)
-    {
-        
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, writeClosedForStreamTask streamTask: NSURLSessionStreamTask)
-    {
-        
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, betterRouteDiscoveredForStreamTask streamTask: NSURLSessionStreamTask)
-    {
-        
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, streamTask: NSURLSessionStreamTask, didBecomeInputStream inputStream: NSInputStream, outputStream: NSOutputStream)
-    {
-        
-    }
+    
     
 }

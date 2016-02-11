@@ -117,19 +117,19 @@
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
-				A21317381C5F8D1F006A38D0 /* README.md */,
-				A24A50811C69FF6100F9D8C2 /* ColorHelper.md */,
-				A24A50821C69FF6100F9D8C2 /* ImageHelper.md */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 				D5C6295C1C3A800E007F7B7C /* SHSwiftKit */,
 				D5C6298F1C3A8BDA007F7B7C /* SHSwiftKitTests */,
 				D5C629691C3A809D007F7B7C /* Sources */,
-				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
+				A24A50811C69FF6100F9D8C2 /* ColorHelper.md */,
+				A24A50821C69FF6100F9D8C2 /* ImageHelper.md */,
 				D5C629761C3A878E007F7B7C /* Nimble.framework */,
+				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
 				D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */,
 				D500FD111C3AABED00782D78 /* Playground-iOS.playground */,
-				D5C629791C3A879F007F7B7C /* Quick.framework */,
 				D5C629751C3A878E007F7B7C /* Quick.framework */,
+				D5C629791C3A879F007F7B7C /* Quick.framework */,
+				A21317381C5F8D1F006A38D0 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,10 +166,13 @@
 		D5C6296A1C3A809D007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D5C629821C3A892A007F7B7C /* iOS.swift */,
-				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
-				A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */,
 				A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */,
+				A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */,
+				A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */,
+				A21317421C60A15C006A38D0 /* SHAsyncManager.swift */,
+				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
+				D5C629861C3A89A8007F7B7C /* Shared.swift */,
+				D5C629821C3A892A007F7B7C /* iOS.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -185,9 +188,6 @@
 		D5C6296E1C3A809D007F7B7C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D5C629861C3A89A8007F7B7C /* Shared.swift */,
-				A21317421C60A15C006A38D0 /* SHAsyncManager.swift */,
-				A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -527,7 +527,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -569,7 +570,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -661,7 +663,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SHSwiftKit/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shSwiftKit.SHSwiftKit-Mac";
 				PRODUCT_NAME = SHSwiftKit;
 				SDKROOT = macosx;
@@ -684,7 +686,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SHSwiftKit/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shSwiftKit.SHSwiftKit-Mac";
 				PRODUCT_NAME = SHSwiftKit;
 				SDKROOT = macosx;
