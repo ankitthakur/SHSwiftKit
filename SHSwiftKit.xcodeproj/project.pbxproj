@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */; };
 		A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213173F1C60A076006A38D0 /* SHNetworkManager.swift */; };
 		A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317421C60A15C006A38D0 /* SHAsyncManager.swift */; };
 		A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceInfo.swift; sourceTree = "<group>"; };
 		A21317381C5F8D1F006A38D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A213173F1C60A076006A38D0 /* SHNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNetworkManager.swift; sourceTree = "<group>"; };
 		A21317421C60A15C006A38D0 /* SHAsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAsyncManager.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9723A94C1C79FA3E0004F135 /* DeviceUtils */ = {
+			isa = PBXGroup;
+			children = (
+				9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */,
+			);
+			name = DeviceUtils;
+			sourceTree = "<group>";
+		};
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
 				A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */,
 				A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */,
+				9723A94C1C79FA3E0004F135 /* DeviceUtils */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -439,6 +450,7 @@
 			files = (
 				A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */,
 				A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */,
+				9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */,
 				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* Shared.swift in Sources */,
