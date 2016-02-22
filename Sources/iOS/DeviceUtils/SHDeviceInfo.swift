@@ -6,7 +6,6 @@
 //  Copyright © 2016 Ankit Thakur. All rights reserved.
 //
 
-import CoreTelephony
 import Darwin
 import UIKit
 
@@ -41,7 +40,7 @@ public enum SHDeviceType : Int {
 
 public class SHDeviceInfo {
     
-    var currentDevice:UIDevice = UIDevice.currentDevice();
+    var currentDevice:UIDevice = UIDevice.currentDevice()
     
     public class var sharedInstance: SHDeviceInfo {
         struct Singleton {
@@ -51,7 +50,7 @@ public class SHDeviceInfo {
     }
     
     /// provides device status, whether it supports multitasking or not.
-    public lazy var isSupportingMultitasking: Bool = {
+    public private(set) lazy var isSupportingMultitasking: Bool = {
         
         let isMultitasking = self.currentDevice.multitaskingSupported
         return isMultitasking
@@ -59,17 +58,17 @@ public class SHDeviceInfo {
     }()
     
     // Provides device name e.g. "My iPhone"
-    public lazy var deviceName:String! = {
+    public private(set) lazy var deviceName:String! = {
         return self.currentDevice.name
     }()
     
     // Provides device system-name e.g. @"iOS"
-    public lazy var systemName: String! = {
+    public private(set) lazy var systemName: String! = {
         return self.currentDevice.systemName
     }()
     
     /// Provides device model : @"iPhone", @"iPod touch"
-    public lazy var model: String! = {
+    public private(set) lazy var model: String! = {
         return self.currentDevice.model
     }()
     
@@ -85,9 +84,9 @@ public class SHDeviceInfo {
      TV // os(tvOS) @available(iOS 9.0, *) Apple TV style UI
      
      */
-    public lazy var deviceType: SHDeviceType = {
-        let idiom:UIUserInterfaceIdiom  = self.currentDevice.userInterfaceIdiom;
-        var deviceType:SHDeviceType = .Unspecified;
+    public private(set) lazy var deviceType: SHDeviceType = {
+        let idiom:UIUserInterfaceIdiom  = self.currentDevice.userInterfaceIdiom
+        var deviceType:SHDeviceType = .Unspecified
         
         switch (idiom) {
         case .Unspecified:
@@ -110,19 +109,19 @@ public class SHDeviceInfo {
             break
         }
         
-        return deviceType;
+        return deviceType
     }()
     
     // Provides device battery level in string e.g. "0.55" for 55% battery, if not available, it provides "Not available"
-    public lazy var deviceBatteryLevel: String! = {
+    public private(set) lazy var deviceBatteryLevel: String! = {
         
-        var batteryLevel:String = "Not available";
+        var batteryLevel:String = "Not available"
         
         if (self.currentDevice.batteryLevel >= 0.0){
             batteryLevel = "\(self.currentDevice.batteryLevel)"
         }
         
-        return batteryLevel;
+        return batteryLevel
     }()
     
     
@@ -132,14 +131,12 @@ public class SHDeviceInfo {
      Unplugged // on battery, discharging
      Charging // plugged in, less than 100%
      Full // plugged in, at 100%
-     
-     - returns: returns charging status of the device
      */
-    public func chargingStatus() -> String! {
+    public private(set) lazy var chargingStatus: String! = {
         
-        var status:String = "Unknown";
+        var status:String = "Unknown"
         
-        switch (currentDevice.batteryState){
+        switch (self.currentDevice.batteryState){
         case .Unknown:
             break
         case .Unplugged:
@@ -151,51 +148,48 @@ public class SHDeviceInfo {
             status = "Full"
         }
         
-        return status;
-    }
+        return status
+    }()
     
     /**
      Check the battery status to know, if device is charging or not.
-     
-     - returns: return bool value to validate, if device is charging or not. If it is fully charged, then also it will indicate, charging to true.
      */
-    public func isCharging() -> Bool{
+    public private(set) lazy var isCharging: Bool = {
         
-        var chargingStatus = false;
+        var chargingStatus = false
         
-        switch(currentDevice.batteryState){
+        switch(self.currentDevice.batteryState){
         case .Unknown:
-            break;
+            break
         case .Unplugged:
-            break;
+            break
         case .Charging:
-            chargingStatus = true;
+            chargingStatus = true
         case .Full:
-            chargingStatus = true;
+            chargingStatus = true
         }
         
-        return chargingStatus;
-    }
+        return chargingStatus
+    }()
     
     /**
      Check the battery status to know if device is fully charged or not
      
-     - returns: return bool value to validate if device is fully charged or not.
      */
-    public func isFullyCharged() -> Bool{
+    public private(set) lazy var isFullyCharged: Bool = {
         
-        var chargingStatus = false;
+        var chargingStatus = false
         
-        switch(currentDevice.batteryState){
+        switch(self.currentDevice.batteryState){
         case .Unknown, .Unplugged, .Charging:
             break
         case .Full:
-            chargingStatus = true;
+            chargingStatus = true
             break
         }
         
-        return chargingStatus;
-    }
+        return chargingStatus
+    }()
     
     
 }

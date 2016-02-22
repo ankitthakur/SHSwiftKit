@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */; };
 		9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */; };
+		9723A9701C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */; };
 		A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213173F1C60A076006A38D0 /* SHNetworkManager.swift */; };
 		A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317421C60A15C006A38D0 /* SHAsyncManager.swift */; };
 		A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceInfo.swift; sourceTree = "<group>"; };
 		9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ReadMe-SHDeviceInfo.md"; sourceTree = "<group>"; };
+		9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceCarrierInfo.swift; sourceTree = "<group>"; };
 		A21317381C5F8D1F006A38D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A213173F1C60A076006A38D0 /* SHNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNetworkManager.swift; sourceTree = "<group>"; };
 		A21317421C60A15C006A38D0 /* SHAsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAsyncManager.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */,
 				9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */,
+				9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */,
 			);
 			path = DeviceUtils;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				D5B2E89B1C3A780C00C0327D /* Frameworks */,
 				D5B2E89C1C3A780C00C0327D /* Headers */,
 				D5B2E89D1C3A780C00C0327D /* Resources */,
+				970190121C7AD5240016819B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -412,6 +416,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		970190121C7AD5240016819B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n swiftlint\nelse\n echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,6 +473,7 @@
 				9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */,
 				9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */,
 				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
+				9723A9701C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* Shared.swift in Sources */,
 				A24A507C1C69F07F00F9D8C2 /* ColorHelper.swift in Sources */,

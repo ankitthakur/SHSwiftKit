@@ -29,14 +29,14 @@ public class SHDeviceInfo {
     public class var sharedInstance: SHSwiftKit.SHDeviceInfo { get }
 
     /// provides device status, whether it supports multitasking or not.
-    public lazy var isSupportingMultitasking: Bool { get set }
+    public private(set) lazy var isSupportingMultitasking: Bool { get set }
 
-    public lazy var deviceName: String! { get set }
+    public private(set) lazy var deviceName: String! { get set }
 
-    public lazy var systemName: String! { get set }
+    public private(set) lazy var systemName: String! { get set }
 
     /// Provides device model : @"iPhone", @"iPod touch"
-    public lazy var model: String! { get set }
+    public private(set) lazy var model: String! { get set }
 
     /**
      Provides the device type as SHDeviceType.
@@ -50,9 +50,9 @@ public class SHDeviceInfo {
      TV // os(tvOS) @available(iOS 9.0, *) Apple TV style UI
 
      */
-    public lazy var deviceType: SHSwiftKit.SHDeviceType { get set }
+    public private(set) lazy var deviceType: SHSwiftKit.SHDeviceType { get set }
 
-    public lazy var deviceBatteryLevel: String! { get set }
+    public private(set) lazy var deviceBatteryLevel: String! { get set }
 
     /**
      Provides the charging status in one of the below string values
@@ -60,23 +60,18 @@ public class SHDeviceInfo {
      Unplugged // on battery, discharging
      Charging // plugged in, less than 100%
      Full // plugged in, at 100%
-
-     - returns: returns charging status of the device
      */
-    public func chargingStatus() -> String!
+    public private(set) lazy var chargingStatus: String! { get set }
 
     /**
      Check the battery status to know, if device is charging or not.
-
-     - returns: return bool value to validate, if device is charging or not. If it is fully charged, then also it will indicate, charging to true.
      */
-    public func isCharging() -> Bool
+    public private(set) lazy var isCharging: Bool { get set }
 
     /**
      Check the battery status to know if device is fully charged or not
 
-     - returns: return bool value to validate if device is fully charged or not.
      */
-    public func isFullyCharged() -> Bool
+    public private(set) lazy var isFullyCharged: Bool { get set }
 }
 ```
