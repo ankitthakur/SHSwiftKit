@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970190431C7B49860016819B /* ReadMe-DeviceCarrierInfo.md in Sources */ = {isa = PBXBuildFile; fileRef = 970190421C7B49860016819B /* ReadMe-DeviceCarrierInfo.md */; };
 		9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */; };
 		9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */; };
 		9723A9701C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		970190421C7B49860016819B /* ReadMe-DeviceCarrierInfo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ReadMe-DeviceCarrierInfo.md"; sourceTree = "<group>"; };
 		9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceInfo.swift; sourceTree = "<group>"; };
 		9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ReadMe-SHDeviceInfo.md"; sourceTree = "<group>"; };
 		9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceCarrierInfo.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */,
 				9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */,
 				9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */,
+				970190421C7B49860016819B /* ReadMe-DeviceCarrierInfo.md */,
 			);
 			path = DeviceUtils;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */,
 				9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */,
 				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
+				970190431C7B49860016819B /* ReadMe-DeviceCarrierInfo.md in Sources */,
 				9723A9701C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* Shared.swift in Sources */,
