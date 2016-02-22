@@ -1,5 +1,6 @@
 
 **How to use SHDeviceInfo**
+```swift
 /**
  Provides the device type as SHDeviceType.
 
@@ -78,3 +79,4 @@ public class SHDeviceInfo {
      */
     public func isFullyCharged() -> Bool
 }
+```
