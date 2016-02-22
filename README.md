@@ -39,6 +39,8 @@ public func radiansToDegrees(radians: CGFloat) -> CGFloat
 
 [Color Helpers](https://github.com/ankitthakur/SHSwiftKit/blob/master/ColorHelper.md)
 
+[Device Info Helpers](https://github.com/ankitthakur/SHSwiftKit/blob/master/Sources/iOS/DeviceUtils/ReadMe-SHDeviceInfo.md)
+
 ## Author
 
 Ankit Thakur, ankitthakur85@icloud.com
