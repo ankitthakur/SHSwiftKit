@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */; };
+		9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */; };
 		A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213173F1C60A076006A38D0 /* SHNetworkManager.swift */; };
 		A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317421C60A15C006A38D0 /* SHAsyncManager.swift */; };
 		A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceInfo.swift; sourceTree = "<group>"; };
+		9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ReadMe-SHDeviceInfo.md"; sourceTree = "<group>"; };
 		A21317381C5F8D1F006A38D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A213173F1C60A076006A38D0 /* SHNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNetworkManager.swift; sourceTree = "<group>"; };
 		A21317421C60A15C006A38D0 /* SHAsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAsyncManager.swift; sourceTree = "<group>"; };
@@ -119,27 +121,28 @@
 		9723A94C1C79FA3E0004F135 /* DeviceUtils */ = {
 			isa = PBXGroup;
 			children = (
+				9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */,
 				9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */,
 			);
-			name = DeviceUtils;
+			path = DeviceUtils;
 			sourceTree = "<group>";
 		};
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
-				A21317381C5F8D1F006A38D0 /* README.md */,
-				A24A50811C69FF6100F9D8C2 /* ColorHelper.md */,
-				A24A50821C69FF6100F9D8C2 /* ImageHelper.md */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 				D5C6295C1C3A800E007F7B7C /* SHSwiftKit */,
 				D5C6298F1C3A8BDA007F7B7C /* SHSwiftKitTests */,
 				D5C629691C3A809D007F7B7C /* Sources */,
-				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
+				A24A50811C69FF6100F9D8C2 /* ColorHelper.md */,
+				A24A50821C69FF6100F9D8C2 /* ImageHelper.md */,
 				D5C629761C3A878E007F7B7C /* Nimble.framework */,
+				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
 				D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */,
 				D500FD111C3AABED00782D78 /* Playground-iOS.playground */,
 				D5C629791C3A879F007F7B7C /* Quick.framework */,
 				D5C629751C3A878E007F7B7C /* Quick.framework */,
+				A21317381C5F8D1F006A38D0 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,11 +179,11 @@
 		D5C6296A1C3A809D007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D5C629821C3A892A007F7B7C /* iOS.swift */,
-				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
-				A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */,
-				A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */,
 				9723A94C1C79FA3E0004F135 /* DeviceUtils */,
+				A24A507B1C69F07F00F9D8C2 /* ColorHelper.swift */,
+				A24A50701C68C0DC00F9D8C2 /* ImageHelper.swift */,
+				A213173F1C60A076006A38D0 /* SHNetworkManager.swift */,
+				D5C629821C3A892A007F7B7C /* iOS.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -196,9 +199,9 @@
 		D5C6296E1C3A809D007F7B7C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D5C629861C3A89A8007F7B7C /* Shared.swift */,
-				A21317421C60A15C006A38D0 /* SHAsyncManager.swift */,
 				A21317AF1C61E7BB006A38D0 /* LazyImageLoader.swift */,
+				A21317421C60A15C006A38D0 /* SHAsyncManager.swift */,
+				D5C629861C3A89A8007F7B7C /* Shared.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			files = (
 				A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */,
 				A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */,
+				9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */,
 				9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */,
 				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
