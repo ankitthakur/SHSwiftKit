@@ -125,10 +125,10 @@
 		9723A94C1C79FA3E0004F135 /* DeviceUtils */ = {
 			isa = PBXGroup;
 			children = (
-				9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */,
-				9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */,
-				9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */,
 				970190421C7B49860016819B /* ReadMe-DeviceCarrierInfo.md */,
+				9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */,
+				9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */,
+				9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */,
 			);
 			path = DeviceUtils;
 			sourceTree = "<group>";
@@ -142,12 +142,12 @@
 				D5C629691C3A809D007F7B7C /* Sources */,
 				A24A50811C69FF6100F9D8C2 /* ColorHelper.md */,
 				A24A50821C69FF6100F9D8C2 /* ImageHelper.md */,
-				D5C629761C3A878E007F7B7C /* Nimble.framework */,
 				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
+				D5C629761C3A878E007F7B7C /* Nimble.framework */,
 				D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */,
 				D500FD111C3AABED00782D78 /* Playground-iOS.playground */,
-				D5C629791C3A879F007F7B7C /* Quick.framework */,
 				D5C629751C3A878E007F7B7C /* Quick.framework */,
+				D5C629791C3A879F007F7B7C /* Quick.framework */,
 				A21317381C5F8D1F006A38D0 /* README.md */,
 			);
 			sourceTree = "<group>";
