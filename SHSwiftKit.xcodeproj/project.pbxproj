@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970190431C7B49860016819B /* ReadMe-DeviceCarrierInfo.md in Sources */ = {isa = PBXBuildFile; fileRef = 970190421C7B49860016819B /* ReadMe-DeviceCarrierInfo.md */; };
 		9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A94A1C79FA370004F135 /* SHDeviceInfo.swift */; };
-		9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96D1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md */; };
 		9723A9701C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9723A96F1C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift */; };
 		A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A213173F1C60A076006A38D0 /* SHNetworkManager.swift */; };
 		A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21317421C60A15C006A38D0 /* SHAsyncManager.swift */; };
@@ -28,7 +26,7 @@
 		D5C629881C3A89A8007F7B7C /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629861C3A89A8007F7B7C /* Shared.swift */; };
 		D5C6299B1C3A8BDA007F7B7C /* MacSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629951C3A8BDA007F7B7C /* MacSpec.swift */; };
 		D5C6299C1C3A8BDA007F7B7C /* SharedSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* SharedSpec.swift */; };
-		D5C6299D1C3A8C6B007F7B7C /* iOSSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629931C3A8BDA007F7B7C /* iOSSpec.swift */; };
+		D5C6299D1C3A8C6B007F7B7C /* SHSwiftKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629931C3A8BDA007F7B7C /* SHSwiftKitSpec.swift */; };
 		D5C6299E1C3A8C75007F7B7C /* SharedSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* SharedSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +77,7 @@
 		D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 		D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
-		D5C629931C3A8BDA007F7B7C /* iOSSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSSpec.swift; sourceTree = "<group>"; };
+		D5C629931C3A8BDA007F7B7C /* SHSwiftKitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSwiftKitSpec.swift; sourceTree = "<group>"; };
 		D5C629951C3A8BDA007F7B7C /* MacSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacSpec.swift; sourceTree = "<group>"; };
 		D5C629971C3A8BDA007F7B7C /* SharedSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,7 +225,7 @@
 		D5C629921C3A8BDA007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D5C629931C3A8BDA007F7B7C /* iOSSpec.swift */,
+				D5C629931C3A8BDA007F7B7C /* SHSwiftKitSpec.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -276,7 +274,6 @@
 				D5B2E89B1C3A780C00C0327D /* Frameworks */,
 				D5B2E89C1C3A780C00C0327D /* Headers */,
 				D5B2E89D1C3A780C00C0327D /* Resources */,
-				970190121C7AD5240016819B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -419,19 +416,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		970190121C7AD5240016819B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n swiftlint\nelse\n echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
 		D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,10 +457,8 @@
 			files = (
 				A21317401C60A076006A38D0 /* SHNetworkManager.swift in Sources */,
 				A21317B01C61E7BB006A38D0 /* LazyImageLoader.swift in Sources */,
-				9723A96E1C7ACE580004F135 /* ReadMe-SHDeviceInfo.md in Sources */,
 				9723A94B1C79FA370004F135 /* SHDeviceInfo.swift in Sources */,
 				A21317431C60A15C006A38D0 /* SHAsyncManager.swift in Sources */,
-				970190431C7B49860016819B /* ReadMe-DeviceCarrierInfo.md in Sources */,
 				9723A9701C7AD0AE0004F135 /* SHDeviceCarrierInfo.swift in Sources */,
 				D5C629831C3A892A007F7B7C /* iOS.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* Shared.swift in Sources */,
@@ -490,7 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C6299E1C3A8C75007F7B7C /* SharedSpec.swift in Sources */,
-				D5C6299D1C3A8C6B007F7B7C /* iOSSpec.swift in Sources */,
+				D5C6299D1C3A8C6B007F7B7C /* SHSwiftKitSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -607,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

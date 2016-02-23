@@ -12,9 +12,9 @@ import Foundation
 
 */
 class SHAsyncManager {
-    
+
     static let sharedInstance = SHAsyncManager()
-    
-    private init(){}
-    
+
+    private init() {}
+
 }

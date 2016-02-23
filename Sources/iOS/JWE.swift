@@ -11,9 +11,13 @@ import Darwin
 import ObjectiveC
 
 /*
-**JSON Web Encryption (JWE)** represents encrypted content using JSON- based data structures [RFC7159].
+**JSON Web Encryption (JWE)** represents encrypted content
+using JSON- based data structures [RFC7159].
 
-JWE represents encrypted content using JSON data structures and base64url encoding.  These JSON data structures MAY contain whitespace and/or line breaks before or after any JSON values or structural characters
+JWE represents encrypted content using
+JSON data structures and base64url encoding.
+These JSON data structures MAY contain whitespace and/or line breaks before
+or after any JSON values or structural characters
 
 A JWE represents these logical values (each of which is defined in JOSE_ReadMe):
 * JOSE Header
@@ -26,7 +30,7 @@ A JWE represents these logical values (each of which is defined in JOSE_ReadMe):
 Please refer JWEReadMe.md
 */
 class JWE: NSObject {
-    
-    
-    
+
+
+
 }

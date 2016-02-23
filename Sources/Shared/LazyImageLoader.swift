@@ -9,18 +9,18 @@
 import Foundation
 
 
-typealias ImageCallback = (imageData: NSData?, imageTempDirPath:String?, error:NSError?) -> Void
+typealias ImageCallback = (imageData: NSData?, imageTempDirPath: String?, error: NSError?) -> Void
 class LazyImageLoader: NSObject {
-    
-    func loadImageWithUrl(url:String!, callback:ImageCallback){
-        let manager:SHNetworkManager = SHNetworkManager.sharedInstance;
-        let media:MediaType = .Data(url, nil);
-        
+
+    func loadImageWithUrl(url: String!, callback: ImageCallback) {
+        let manager: SHNetworkManager = SHNetworkManager.sharedInstance
+        let media: MediaType = .Data(url, nil)
+
 //        let data = nil;
-        
-        manager.requestWithUrl(media) { (data: NSData?, userInfo: [NSObject : AnyObject]?, error:NSError?) -> Void in
-            callback(imageData: data, imageTempDirPath: nil, error: error);
-        };
+
+        manager.requestWithUrl(media) { (data: NSData?, userInfo: [NSObject : AnyObject]?, error: NSError?) -> Void in
+            callback(imageData: data, imageTempDirPath: nil, error: error)
+        }
     }
-    
+
 }
