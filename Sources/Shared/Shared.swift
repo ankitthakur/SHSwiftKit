@@ -15,24 +15,24 @@ public func localAutoreleasePool(closure: ()->()) {
 }
 
 
-public var globalMainQueue: dispatch_queue_t {
-    return dispatch_get_main_queue()
+public var globalMainQueue: DispatchQueue {
+    return DispatchQueue.main
 }
 
-public var globalUserInteractiveQueue: dispatch_queue_t {
-    return dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
+public var globalUserInteractiveQueue: DispatchQueue {
+    return DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosUserInteractive)
 }
 
-public var globalUserInitiatedQueue: dispatch_queue_t {
-    return dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
+public var globalUserInitiatedQueue: DispatchQueue {
+    return DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosUserInitiated)
 }
 
-public var globalUtilityQueue: dispatch_queue_t {
-    return dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
+public var globalUtilityQueue: DispatchQueue {
+    return DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosUtility)
 }
 
-public var globalBackgroundQueue: dispatch_queue_t {
-    return dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+public var globalBackgroundQueue: DispatchQueue {
+    return DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosBackground)
 }
 
 

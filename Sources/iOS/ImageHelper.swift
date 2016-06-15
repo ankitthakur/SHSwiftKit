@@ -25,14 +25,11 @@ public extension UIImage {
         var newImage: UIImage?
 
         localAutoreleasePool { () -> () in
-            var scale: CGFloat = 1.0
-            if UIScreen.mainScreen().respondsToSelector("scale") {
-                scale = UIScreen.mainScreen().scale
-            }
+            let scale: CGFloat = UIScreen.main().scale
 
-            local({ () -> () in
+            local(closure: { () -> () in
                 UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, scale)
-                view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+                view.layer.render(in: UIGraphicsGetCurrentContext()!)
                 newImage = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
             })
@@ -50,8 +47,8 @@ public extension UIImage {
      - returns: resized image to particular rect.
      */
     class func image(image: UIImage, withRect rect: CGRect) -> UIImage? {
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(image.CGImage, rect)!
-        let croppedImage = UIImage(CGImage: imageRef)
+        let imageRef: CGImage = image.cgImage!.cropping(to: rect)!
+        let croppedImage = UIImage(cgImage: imageRef)
         return croppedImage
     }
 
@@ -76,10 +73,10 @@ public extension UIImage {
         let xOrigin = (originalWidth  - edge) / 2.0
         let yOrigin = (originalHeight - edge) / 2.0
 
-        let cropSquare = CGRectMake(xOrigin, yOrigin, edge, edge)
+        let cropSquare = CGRect(x: xOrigin, y: yOrigin, width: edge, height: edge)
 
-        let imageRef = CGImageCreateWithImageInRect(image.CGImage, cropSquare)
-        return UIImage(CGImage: imageRef!, scale: UIScreen.mainScreen().scale, orientation: image.imageOrientation)
+        let imageRef = image.cgImage!.cropping(to: cropSquare)
+        return UIImage.init(cgImage:imageRef!, scale: UIScreen.main().scale, orientation: image.imageOrientation)
     }
 
     /**
@@ -105,7 +102,7 @@ public extension UIImage {
 
         var thumbnailPoint = CGPoint(x: 0.0, y: 0.0)
 
-        if CGSizeEqualToSize(imageSize, targetSize) == false {
+        if imageSize.equalTo(targetSize) == false {
             let widthFactor = targetWidth/width
             let heightFactor = targetHeight/height
 
@@ -136,7 +133,7 @@ public extension UIImage {
             thumbnailRect.size.width  = scaledWidth
             thumbnailRect.size.height = scaledHeight
 
-            sourceImage.drawInRect(thumbnailRect)
+            sourceImage.draw(in: thumbnailRect)
 
             newImage = UIGraphicsGetImageFromCurrentImageContext()
             if newImage == nil {
@@ -158,7 +155,7 @@ public extension UIImage {
      - returns: Returns an image, with target size with proper scaling and cropping.
      */
     func scaleAndCropImageForSize(targetSize: CGSize) -> UIImage? {
-        return UIImage.scaleAndCropImage(self, forSize: targetSize)
+        return UIImage.scaleAndCropImage(sourceImage: self, forSize: targetSize)
     }
 
     /**
@@ -177,13 +174,13 @@ public extension UIImage {
         localAutoreleasePool { () -> () in
 
             UIGraphicsBeginImageContext(size)
-            let rect: CGRect = CGRectMake(0, 0, size.width, size.height)
-            sourceImage.drawInRect(rect, blendMode: .Normal, alpha: 1)
-            let context: CGContextRef  = UIGraphicsGetCurrentContext()!
+					let rect: CGRect = CGRect(x: 0, y:0, width: size.width, height: size.height)
+            sourceImage.draw(in: rect, blendMode: .normal, alpha: 1)
+            let context: CGContext  = UIGraphicsGetCurrentContext()!
 
             let components: ColorComponents = borderColor.colorComponents()
-            CGContextSetRGBStrokeColor(context, components.red, components.green, components.blue, components.alpha)
-            CGContextStrokeRect(context, rect)
+            context.setStrokeColor(red: components.red, green: components.green, blue: components.blue, alpha: components.alpha)
+            context.stroke(rect)
             newImage =  UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         }
@@ -200,6 +197,6 @@ public extension UIImage {
      */
     class func imageWithBlackBorder(sourceImage: UIImage) -> UIImage? {
 
-        return UIImage.image(sourceImage, withBorderColor: UIColor.blackColor())
+			return UIImage.image(sourceImage: sourceImage, withBorderColor: UIColor.black())
     }
 }

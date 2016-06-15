@@ -18,7 +18,7 @@ class LazyImageLoader: NSObject {
 
 //        let data = nil;
 
-        manager.requestWithUrl(media) { (data: NSData?, userInfo: [NSObject : AnyObject]?, error: NSError?) -> Void in
+        manager.requestWithUrl(media: media) { (data: NSData?, userInfo: [NSObject: AnyObject]?, error: NSError?) -> Void in
             callback(imageData: data, imageTempDirPath: nil, error: error)
         }
     }

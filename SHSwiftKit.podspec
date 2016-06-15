@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SHSwiftKit"
-  s.summary          = "Pure Swift Kit with wrappers on Foundation and other iOS Core frameworks."
+  s.summary          = "An Objective-C library for Elliptic Curve Digital Signing Algorithm (ECDSA) and for Elliptic Curve Diffie-Hellman (ECDH)."
   s.version          = "0.0.0.1"
   s.homepage         = "https://github.com/ankitthakur/SHSwiftKit"
   s.license          = 'MIT'

@@ -1,0 +1,6 @@
+framework module Pods_SHSwiftKit_Mac_Tests {
+  umbrella header "Pods-SHSwiftKit-Mac-Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

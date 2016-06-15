@@ -1,0 +1,6 @@
+framework module GMEllipticCurveCrypto {
+  umbrella header "GMEllipticCurveCrypto-umbrella.h"
+
+  export *
+  module * { export * }
+}

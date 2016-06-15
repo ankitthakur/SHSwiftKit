@@ -39,14 +39,14 @@ public class SHDeviceCarrierInfo {
 	public private(set) lazy var cellularConnectionType: String! = {
 		let radioType: String! = self.carrierNetworkInfo.currentRadioAccessTechnology!
 		var cellularConnection: String = ""
-		if radioType.containsString(self.kCellularNetworkPrefix) {
+		if radioType.contains(self.kCellularNetworkPrefix) {
 
-			let appRange: Range<String.Index> = radioType.rangeOfString(self.kCellularNetworkPrefix)!
+			guard let appRange: Range = radioType.range(of:self.kCellularNetworkPrefix)!
+				else{
+					return cellularConnection
+			}
 
-			let startIndex = appRange.endIndex
-			let newIndex: Range<String.Index> = startIndex...radioType.endIndex
-
-			cellularConnection = radioType.substringWithRange(newIndex)
+			cellularConnection = radioType.substring(from: appRange.upperBound)
 
 		}
 		return cellularConnection
@@ -56,10 +56,10 @@ public class SHDeviceCarrierInfo {
 
 		var carrierdescription: String = "\(self.cellularCarrierName)-\(self.cellularCarrierCountry)"
 		if self.hasCellularCarrier {
-			carrierdescription.appendContentsOf("\(self.cellularConnectionType)")
+			carrierdescription.append("\(self.cellularConnectionType)")
 		}
 
-		carrierdescription.appendContentsOf(" \(self.cellularCarrierCountry)")
+		carrierdescription.append(" \(self.cellularCarrierCountry)")
 
 		return carrierdescription
 	}()

@@ -10,223 +10,122 @@ import Foundation
 
 /** SHNetworkManager Class
 
- */
+*/
 
-typealias CompletionBlock = (data: NSData?, userInfo: [NSObject : AnyObject]?, error: NSError?) -> Void
+typealias CompletionBlock = (data: NSData?, userInfo: URLResponse?, error: NSError?) -> Void
 
-struct SKHTTPRequest {
-    var session: NSURLSession
-    let task: NSURLSessionTask
-    let taskIndex: Int
-    let mediaType: MediaType?
-    let completion: CompletionBlock?
+class SKHTTPRequest:AnyObject {
+	var session:URLSession?
+	var task:URLSessionTask?
+	var request:URLRequest?
+	var completionBlock:CompletionBlock?
+	var responseData:NSMutableData?
 
-}
-
-enum MediaType {
-		// request url string, http body parameters, BLOB
-    case Data(String, [String:AnyObject]?)
-		// request url string, http body parameters, BLOB
-    case BLOB(String, [String:AnyObject]?, NSData?)
-		// request url string, http body parameters, file url
-    case File(String, [String:AnyObject]?, NSURL)
-		// request url string, http body parameters, stream
-    case Stream(String, [String:AnyObject]?, NSInputStream)
 }
 
 
 let backgroundSessionIdentifier = "SKHTTPBackgroundSessionIdentifier"
 
-class SHNetworkManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+class SHNetworkManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
 
-    static let sharedInstance = SHNetworkManager()
+	static let sharedInstance = SHNetworkManager()
 
+	var requestObjects: NSMutableArray = NSMutableArray(capacity: 0)
 
+	// MARK: - URLSessionDelegate
 
+	func urlSession(_ session: URLSession, didBecomeInvalidWithError error: NSError?) {
 
-    var requestObjects: [SKHTTPRequest] = []
+	}
 
-    ////////////////////////////////////
-    /////////// sessions ///////////////
-    ////////////////////////////////////
-    //  Default sessions behave similarly to
-    // other Foundation methods for downloading URLs.
-		// They use a persistent disk-based cache and store credentials in the user’s keychain.
-    var defaultSession: NSURLSession?
+	func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+		print(challenge.protectionSpace.host)
+	}
 
-    // Ephemeral sessions do not store any data to disk;
-		// all caches, credential stores, and so on are kept in RAM
-		// and tied to the session. Thus, when your app invalidates the session,
-		// they are purged automatically.
-    var ephemeralSession: NSURLSession?
+	func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
 
-    //  Background sessions are similar to default sessions, except that a separate process handles all data transfers.
-    var backgroundSession: NSURLSession?
+	}
 
+  // MARK: URLSessionTaskDelegate
+	func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: (URLRequest?) -> Void) {
 
-    //////////////////////////////////////////////
-    /////////// configuration objects ////////////
-    //////////////////////////////////////////////
-    var defaultConfigObject: NSURLSessionConfiguration?
-    var ephemeralConfigObject: NSURLSessionConfiguration?
-    var backgroundConfigObject: NSURLSessionConfiguration?
+	}
 
-    /////////////////////////////////////////
-    /////////// session tasks ///////////////
-    /////////////////////////////////////////
-    var dataTasks: [NSURLSessionDataTask] = []
-    var downloadTasks: [NSURLSessionDownloadTask] = []
-    var uploadTasks: [NSURLSessionUploadTask] = []
+	func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+		print("challenging host in task : \(challenge.protectionSpace.host)")
+	}
 
-    var mainQueue: NSOperationQueue = NSOperationQueue.mainQueue()
-    var backgroundQueue: dispatch_queue_t = globalUtilityQueue
+	func urlSession(_ session: URLSession, task: URLSessionTask, needNewBodyStream completionHandler: (InputStream?) -> Void) {
 
-    private override init() {
+	}
 
-        super.init()
+	func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
 
-        defaultConfigObject = NSURLSessionConfiguration.defaultSessionConfiguration()
-        ephemeralConfigObject = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-        backgroundConfigObject = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(backgroundSessionIdentifier)
+	}
 
-        // session for each configurations
-        defaultSession = NSURLSession(configuration: defaultConfigObject!, delegate: self, delegateQueue: mainQueue)
-        ephemeralSession = NSURLSession(configuration: ephemeralConfigObject!, delegate: self, delegateQueue: mainQueue)
-        backgroundSession = NSURLSession(configuration: backgroundConfigObject!, delegate: self, delegateQueue: mainQueue)
+	func filteredRequestObjects(session:URLSession) -> [SKHTTPRequest]?{
 
+		let predicate:Predicate = Predicate(format: "session=%@",session)
 
-    }
+		let params:[SKHTTPRequest]? = requestObjects.filtered(using: predicate) as? [SKHTTPRequest]
 
-    func requestWithUrl(media: MediaType, completionBlock: CompletionBlock) -> Void {
-        var sessionTask: NSURLSessionTask?
-        switch media {
-        case .Data(_, _):
-            dispatch_sync(backgroundQueue) {
-                let object = self.requestWithData(media)
-                if object.error != nil {
-                    completionBlock(data: nil, userInfo: nil, error: object.error)
-                } else {
-                    sessionTask = object.session
-                    // store the request in array
-                    self.requestObjects.append(SKHTTPRequest(session: self.defaultSession!, task: sessionTask!, taskIndex: self.requestObjects.count, mediaType: media, completion: completionBlock))
-                    // To start the task, we need to tell it to resume by calling resume on the task
-                    sessionTask!.resume()
-                }
+		return params
+	}
 
-            }
-            break
+	func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: NSError?) {
 
-        case .File(_, _, _):
-            dispatch_sync(backgroundQueue) {
+		let urlResponse:HTTPURLResponse = task.response as! HTTPURLResponse;
+		let statusCode = urlResponse.statusCode
 
-            }
-            break
+		let params = filteredRequestObjects(session: session)
 
-        case .Stream(_, _, _):
-            dispatch_sync(backgroundQueue) {
+		guard let param:SKHTTPRequest = (params?.last)! as SKHTTPRequest else{
+			print("unknown request has error")
+		}
 
-            }
-            break
+		if statusCode >= 200 && statusCode < 300 {
+			param.completionBlock!(data: param.responseData, userInfo: task.response, error: error)
+		}
+		else{
+			param.completionBlock!(data: nil, userInfo: task.response, error: error)
+		}
 
-        default:
-            break
+		requestObjects.remove(param as AnyObject)
+	}
 
+	// MARK: URLSessionDataDelegate
 
-        }
+	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: (URLSession.ResponseDisposition) -> Swift.Void){
 
-    }
+		let disposition:URLSession.ResponseDisposition  = URLSession.ResponseDisposition.allow;
+		completionHandler(disposition);
 
-    internal func requestWithData(media: MediaType) -> (session: NSURLSessionTask?, error: NSError?) {
-        var sessionTask: NSURLSessionTask?
-        var error: NSError?
+	}
 
-        switch media {
-        case .Data(let urlString, let params):
-            dispatch_sync(backgroundQueue) {
-                let url = NSURL(string: urlString)
-                let request: NSURLRequest = NSURLRequest(URL: url!)
-                if params != nil {
-                    let body: NSData = NSKeyedArchiver.archivedDataWithRootObject(params!)
-                    request.setValue(body, forKey: "HTTPBody")
-                }
-                sessionTask = self.defaultSession!.dataTaskWithRequest(request)
-            }
-        default:
-            error = NSError(domain: "Invalid Media Type", code: 111, userInfo: ["localizedDescription":"media type is not of Data type"])
+	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data){
+
+		let params = filteredRequestObjects(session: session)
+
+		guard let param:SKHTTPRequest = params?.last else{
+			print("unknown request has error")
+			return
+		}
+
+		if data.count > 0 {
+			if param.responseData?.length == 0 {
+				param.responseData = NSMutableData(data: data)
+			}
+			else{
+				param.responseData?.append(data)
+			}
+		}
+
+		
+	}
 
 
-        }
+	func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, willCacheResponse proposedResponse: CachedURLResponse, completionHandler: (CachedURLResponse?) -> Swift.Void){
 
-        return (sessionTask, error)
-    }
-
-    // MARK:- NSURLSessionDataDelegate
-    /*
-    * Messages related to the operation of a task that delivers data
-    * directly to the delegate.
-    */
-
-
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-
-    }
-
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didBecomeDownloadTask downloadTask: NSURLSessionDownloadTask) {
-
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didBecomeStreamTask streamTask: NSURLSessionStreamTask) {
-
-    }
-
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-
-    }
-
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, willCacheResponse proposedResponse: NSCachedURLResponse, completionHandler: (NSCachedURLResponse?) -> Void) {
-
-    }
-
-    // MARK:- NSURLSessionDownloadDelegate : NSURLSessionTaskDelegate {
-
-    /*
-    * Messages related to the operation of a task that writes data to a
-    * file and notifies the delegate upon completion.
-    */
-
-
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
-
-    }
-
-    /* Sent periodically to notify the delegate of download progress. */
-
-
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-
-    }
-
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
-
-    }
-
-
-    // MARK:- NSURLSessionStreamDelegate
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, readClosedForStreamTask streamTask: NSURLSessionStreamTask) {
-
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, writeClosedForStreamTask streamTask: NSURLSessionStreamTask) {
-
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, betterRouteDiscoveredForStreamTask streamTask: NSURLSessionStreamTask) {
-
-    }
-    @available(iOS 9.0, *)
-    func URLSession(session: NSURLSession, streamTask: NSURLSessionStreamTask, didBecomeInputStream inputStream: NSInputStream, outputStream: NSOutputStream) {
-
-    }
+	}
 
 }

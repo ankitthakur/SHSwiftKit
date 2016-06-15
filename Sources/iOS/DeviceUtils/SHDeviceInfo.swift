@@ -40,7 +40,7 @@ public enum SHDeviceType: Int {
 
 public class SHDeviceInfo {
 
-	var currentDevice: UIDevice = UIDevice.currentDevice()
+	var currentDevice: UIDevice = UIDevice.current()
 
 	public class var sharedInstance: SHDeviceInfo {
 		struct Singleton {
@@ -52,7 +52,7 @@ public class SHDeviceInfo {
 	/// provides device status, whether it supports multitasking or not.
 	public private(set) lazy var isSupportingMultitasking: Bool = {
 
-		let isMultitasking = self.currentDevice.multitaskingSupported
+		let isMultitasking = self.currentDevice.isMultitaskingSupported
 		return isMultitasking
 
 	}()
@@ -89,7 +89,7 @@ public class SHDeviceInfo {
 		var deviceType: SHDeviceType = .Unspecified
 
 		switch idiom {
-		case .Unspecified:
+		case .unspecified:
 			deviceType = .Unspecified
 			break
 		case .TV:
@@ -101,11 +101,14 @@ public class SHDeviceInfo {
 				deviceType = .Unspecified
 			#endif
 			break
-		case .Pad:
+		case .pad:
 			deviceType = .PadUI
 			break
-		case .Phone:
+		case .phone:
 			deviceType = .PhoneUI
+			break
+		default:
+			deviceType = .Unspecified
 			break
 		}
 
@@ -139,14 +142,14 @@ public class SHDeviceInfo {
 		var status: String = "Unknown"
 
 		switch self.currentDevice.batteryState {
-		case .Unknown:
+		case .unknown:
 			break
-		case .Unplugged:
+		case .unplugged:
 			status = "Unplugged"
 			break
-		case .Charging:
+		case .charging:
 			status = "Charging"
-		case .Full:
+		case .full:
 			status = "Full"
 		}
 
@@ -161,13 +164,13 @@ public class SHDeviceInfo {
 		var chargingStatus = false
 
 		switch self.currentDevice.batteryState {
-		case .Unknown:
+		case .unknown:
 			break
-		case .Unplugged:
+		case .unplugged:
 			break
-		case .Charging:
+		case .charging:
 			chargingStatus = true
-		case .Full:
+		case .full:
 			chargingStatus = true
 		}
 
@@ -183,9 +186,9 @@ public class SHDeviceInfo {
 		var chargingStatus = false
 
 		switch self.currentDevice.batteryState {
-		case .Unknown, .Unplugged, .Charging:
+		case .unknown, .unplugged, .charging:
 			break
-		case .Full:
+		case .full:
 			chargingStatus = true
 			break
 		}

@@ -23,9 +23,10 @@ public extension UIColor {
 	func colorFromHexString(hexString: String!) -> UIColor? {
 		var rgbValue: UInt64 = 0
 
-		let newHexString = hexString.stringByReplacingOccurrencesOfString("#", withString: "")
-		let scanner: NSScanner = NSScanner(string: newHexString)
-		scanner.scanHexLongLong(&rgbValue)
+
+		let newHexString = hexString.replacingOccurrences(of: "#", with: "")
+		let scanner: Scanner = Scanner(string: newHexString)
+		scanner.scanHexInt64(&rgbValue)
 
 		let r: CGFloat = CGFloat((rgbValue & 0xFF0000) >> 16)/255.0
 		let g: CGFloat = CGFloat((rgbValue & 0x00FF00) >> 8)/255.0
@@ -63,14 +64,14 @@ public extension UIColor {
 		var a: CGFloat = 0
 
 		local { () -> () in
-			if self.respondsToSelector("getRed:green:blue:alpha:") {
+			if self.responds(to:#selector(UIColor.getRed(_:green:blue:alpha:))) {
 				self.getRed(&r, green: &g, blue: &b, alpha: &a)
 			} else {
-				let components = CGColorGetComponents(self.CGColor)
-				r = components[0]
-				g = components[1]
-				b = components[2]
-				a = components[3]
+				let components = self.cgColor.components
+				r = (components?[0])!
+				g = (components?[1])!
+				b = (components?[2])!
+				a = (components?[3])!
 			}
 		}
 
