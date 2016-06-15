@@ -42,82 +42,74 @@ public class SHFile: NSObject {
 	}
 
 	public class func installedApps() -> ((Int, [String]), NSError?){
+		let filePath = "/"
 
-		do {
-			let filePath = "/"
+		var error:NSError?
 
-			var error:NSError?
+		var numberOfApps:Int = 0;
+		var apps:[String] = [];
 
-			var numberOfApps:Int = 0;
-			var apps:[String] = [];
+		let manager = FileManager.default()
 
-			let manager = FileManager.default()
+		if manager.fileExists(atPath: filePath) {
 
-			if manager.fileExists(atPath: filePath) {
+			let subpaths:[String] = manager.subpaths(atPath: filePath)!;
+			for path in subpaths{
+				print(path)
+				do {
+					print("------------ file path \(filePath)")
 
-				let subpaths:[String] = manager.subpaths(atPath: filePath)!;
-				for path in subpaths{
-					print(path)
-					do {
-						print("------------ file path \(filePath)")
+					let attributes = try manager.attributesOfItem(atPath: filePath)
 
-						let attributes = try manager.attributesOfItem(atPath: filePath)
-
-						print("NSFileCreationDate \(attributes[FileAttributeKey.creationDate.rawValue] as? NSDate)")
-					}
-					catch let exception{
-						print(exception)
-						//error = [NSError errorWithDomain:@"File Manager" code:1200 userInfo:@{NSLocalizedDescriptionKey:@"File does not exist at provided path"}];
-						error = NSError(domain: FILEMANAGER_ERROR_DOMAIN, code: FILE_NOT_FOUND, userInfo: [NSLocalizedDescriptionKey:FILE_NOT_FOUND_MESSAGE])
-					}
-
+					print("NSFileCreationDate \(attributes[FileAttributeKey.creationDate.rawValue] as? NSDate)")
 				}
-				for subpath:String in subpaths {
-					if subpath.hasSuffix(".app"){
-						//print("\n")
-						let fullpath = "\(filePath)/\(subpath)"
+				catch let exception{
+					print(exception)
+					//error = [NSError errorWithDomain:@"File Manager" code:1200 userInfo:@{NSLocalizedDescriptionKey:@"File does not exist at provided path"}];
+					error = NSError(domain: FILEMANAGER_ERROR_DOMAIN, code: FILE_NOT_FOUND, userInfo: [NSLocalizedDescriptionKey:FILE_NOT_FOUND_MESSAGE])
+				}
+
+			}
+			for subpath:String in subpaths {
+				if subpath.hasSuffix(".app"){
+					//print("\n")
+					let fullpath = "\(filePath)/\(subpath)"
 
 
-						if(!subpath.hasSuffix("Service.app") &&
-							!subpath.hasSuffix("Dialog.app") &&
-							!subpath.hasSuffix("WebContentAnalysisUI.app") &&
-							!subpath.hasSuffix("iAdOptOut.app") &&
-							!subpath.hasSuffix("Diagnostics.app") &&
-							!subpath.hasSuffix("quicklookd.app") &&
-							!subpath.hasSuffix("PreBoard.app") &&
-							!subpath.hasSuffix("Preferences.app") &&
-							!subpath.hasSuffix("Print Center.app") &&
-							!subpath.hasSuffix("PrintStatus.app") &&
-							!subpath.hasSuffix("SLGoogleAuth.app") &&
-							!subpath.hasSuffix("ShareBear.app") &&
-							!subpath.hasSuffix("WebApp1.app") &&
-							!subpath.hasSuffix("WebContentAnalysisUI.app") &&
-							!subpath.hasSuffix("WebSheet.app") &&
-							!subpath.hasSuffix("GameController.app") &&
-							!subpath.hasSuffix("Feedback Assistant iOS.app") &&
-							!subpath.hasSuffix("AskPermissionUI.app") &&
-							!subpath.hasSuffix("CoreAuthUI.app") &&
-							!subpath.hasSuffix("Bridge.app") &&
-							!subpath.hasSuffix("MobileReplayer.app")){
-							print("\(manager.displayName(atPath: fullpath))")
-							numberOfApps += 1;
-							apps.append(subpath)
-						}
+					if(!subpath.hasSuffix("Service.app") &&
+						!subpath.hasSuffix("Dialog.app") &&
+						!subpath.hasSuffix("WebContentAnalysisUI.app") &&
+						!subpath.hasSuffix("iAdOptOut.app") &&
+						!subpath.hasSuffix("Diagnostics.app") &&
+						!subpath.hasSuffix("quicklookd.app") &&
+						!subpath.hasSuffix("PreBoard.app") &&
+						!subpath.hasSuffix("Preferences.app") &&
+						!subpath.hasSuffix("Print Center.app") &&
+						!subpath.hasSuffix("PrintStatus.app") &&
+						!subpath.hasSuffix("SLGoogleAuth.app") &&
+						!subpath.hasSuffix("ShareBear.app") &&
+						!subpath.hasSuffix("WebApp1.app") &&
+						!subpath.hasSuffix("WebContentAnalysisUI.app") &&
+						!subpath.hasSuffix("WebSheet.app") &&
+						!subpath.hasSuffix("GameController.app") &&
+						!subpath.hasSuffix("Feedback Assistant iOS.app") &&
+						!subpath.hasSuffix("AskPermissionUI.app") &&
+						!subpath.hasSuffix("CoreAuthUI.app") &&
+						!subpath.hasSuffix("Bridge.app") &&
+						!subpath.hasSuffix("MobileReplayer.app")){
+						print("\(manager.displayName(atPath: fullpath))")
+						numberOfApps += 1;
+						apps.append(subpath)
 					}
 				}
 			}
-			else {
-				error = NSError(domain: FILEMANAGER_ERROR_DOMAIN, code: APPS_NOT_FOUND, userInfo: [NSLocalizedDescriptionKey:APPS_NOT_FOUND_MESSAGE])
-			}
-			
-			return ((numberOfApps, apps), error)
 		}
-		catch let exception{
-			print(exception)
-			//error = [NSError errorWithDomain:@"File Manager" code:1200 userInfo:@{NSLocalizedDescriptionKey:@"File does not exist at provided path"}];
-			error = NSError(domain: FILEMANAGER_ERROR_DOMAIN, code: FILE_NOT_FOUND, userInfo: [NSLocalizedDescriptionKey:FILE_NOT_FOUND_MESSAGE])
-			return (nil, error)
+		else {
+			error = NSError(domain: FILEMANAGER_ERROR_DOMAIN, code: APPS_NOT_FOUND, userInfo: [NSLocalizedDescriptionKey:APPS_NOT_FOUND_MESSAGE])
 		}
+
+		return ((numberOfApps, apps), error)
 	}
-
 }
+
+

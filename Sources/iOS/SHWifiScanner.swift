@@ -10,6 +10,15 @@ import Foundation
 import Darwin
 import SystemConfiguration
 
-class SHWifiScanner: NSObject {
+class Sample1: NSObject {
+	init(style:AnyObject) {
+		super.init()
+	}
+}
+class Sample2: Sample1 {
+
+	override init(style:AnyObject) {
+		super.init(style: style)
+	}
 	
 }
